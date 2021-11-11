@@ -1,12 +1,9 @@
 const { Sequelize, DataTypes, Model } = require('sequelize');
 const sequelize = require("../connection")
-class University extends Model {}
+class StudentCourse extends Model {}
 
-University.init({
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
+StudentCourse.init({
+   
     student_id: {
         type: DataTypes.INTEGER
     },
@@ -17,7 +14,7 @@ University.init({
 },{
     // Other model options go here
     sequelize, // We need to pass the connection instance
-    modelName: 'University' // We need to choose the model name
+    modelName: 'StudentCourse' // We need to choose the model name
   })
 
-module.exports = University
+module.exports = StudentCourse

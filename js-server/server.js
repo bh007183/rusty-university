@@ -2,6 +2,8 @@ const express = require("express")
 const PORT = process.env.PORT || 8080
 const { ApolloServer } = require('apollo-server-express');
 const sequelize = require("./connection")
+const typeDefs = require("./schema/typeDefs")
+const resolvers = require("./schema/resolvers")
 
 
 
@@ -25,3 +27,4 @@ sequelize.sync({force: false}).then(()=> {
 })
 
 }
+startApolloServer(typeDefs, resolvers)
